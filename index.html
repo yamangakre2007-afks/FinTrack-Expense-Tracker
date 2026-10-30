@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrack | Expense Tracker</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="dashboard">
+
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+                <h2>FinTrack</h2>
+            </div>
+
+            <p class="menu-heading">MENU</p>
+
+            <nav class="navigation">
+
+                <a href="#" class="nav-link active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#transactions" class="nav-link">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span>Transactions</span>
+                </a>
+
+                <a href="#categories" class="nav-link">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Categories</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <button id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+                <span>Dark Mode</span>
+            </button>
+
+            </div>
+
+        </aside>
+
+
+
+        <main class="main-content">
+
+
+            <header class="topbar">
+
+                <div class="welcome">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back! Here's your financial overview.</p>
+                </div>
+
+                <button class="add-btn" id="openFormBtn">
+                <i class="fa-solid fa-plus"></i>
+                Add Expense
+            </button>
+
+            </header>
+
+
+
+            <section class="summary-cards">
+
+                <article class="summary-card">
+
+                    <div class="card-top">
+                        <p>Total Expenses</p>
+                        <span class="card-icon purple">
+                        <i class="fa-solid fa-wallet"></i>
+                    </span>
+                    </div>
+
+                    <h2 id="totalExpenses">₹0</h2>
+                    <p class="card-description">All recorded expenses</p>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="card-top">
+                        <p>This Month</p>
+                        <span class="card-icon green">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </span>
+                    </div>
+
+                    <h2 id="monthlyExpenses">₹0</h2>
+                    <p class="card-description">Expenses this month</p>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="card-top">
+                        <p>Total Transactions</p>
+                        <span class="card-icon orange">
+                        <i class="fa-solid fa-receipt"></i>
+                    </span>
+                    </div>
+
+                    <h2 id="totalTransactions">0</h2>
+                    <p class="card-description">Recorded transactions</p>
+
+                </article>
+
+            </section>
+
+
+
+            <section class="expense-form-section" id="expenseFormSection">
+
+                <div class="section-heading">
+                    <h2>Add New Expense</h2>
+                </div>
+
+                <form id="expenseForm">
+
+                    <div class="form-group">
+                        <label for="title">Expense Title</label>
+                        <input type="text" id="title" placeholder="e.g. Dinner" required minlength="2">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount" placeholder="Enter amount" required min="1" step="0.01">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+
+                        <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+
+                    <div class="form-buttons">
+
+                        <button type="submit" class="add-btn">
+                        Save Expense
+                    </button>
+
+                        <button type="button" id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+
+            <section class="transactions" id="transactions">
+
+                <div class="section-heading">
+                    <h2>Recent Transactions</h2>
+                </div>
+
+
+
+                <div class="filters">
+
+                    <input type="text" id="searchInput" placeholder="Search expenses...">
+
+                    <select id="filterCategory">
+                    <option value="All">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                    <select id="sortExpenses">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="high">Highest Amount</option>
+                    <option value="low">Lowest Amount</option>
+                </select>
+
+                </div>
+
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Expense</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody id="expenseList">
+
+                        </tbody>
+
+                    </table>
+
+                    <p id="emptyMessage">
+                        No expenses found. Add your first expense!
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <section class="category-summary" id="categories">
+
+                <div class="section-heading">
+                    <h2>Spending by Category</h2>
+                </div>
+
+                <div id="categoryList">
+
+                </div>
+
+            </section>
+
+
+
+            <footer class="footer">
+
+                <p>© 2026 FinTrack. Manage your money smarter.</p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

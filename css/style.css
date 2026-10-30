@@ -1,0 +1,532 @@
+/* =================================
+   1. GOOGLE FONT & GLOBAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #7257e8;
+    --primary-dark: #5c43d1;
+    --background: #f6f7fb;
+    --white: #ffffff;
+    --text: #202033;
+    --secondary-text: #858597;
+    --border: #eeeeF4;
+    --green: #19b879;
+    --orange: #f59e42;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =================================
+   2. DASHBOARD LAYOUT
+================================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   3. SIDEBAR
+================================= */
+
+.sidebar {
+    width: 250px;
+    background: var(--white);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border);
+    position: fixed;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 50px;
+}
+
+.logo i {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.logo h2 {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.menu-heading {
+    color: var(--secondary-text);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    text-decoration: none;
+    color: var(--secondary-text);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link i {
+    font-size: 17px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #f0edff;
+    color: var(--primary);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.sidebar-bottom button {
+    width: 100%;
+    padding: 14px;
+    background: var(--background);
+    border: none;
+    border-radius: 10px;
+    color: var(--text);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* =================================
+   4. MAIN CONTENT
+================================= */
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 35px 40px;
+}
+
+
+/* =================================
+   5. TOP HEADER
+================================= */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.welcome h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: var(--secondary-text);
+    font-size: 14px;
+}
+
+.add-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   6. SUMMARY CARDS
+================================= */
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.summary-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-top p {
+    color: var(--secondary-text);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.card-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 18px;
+}
+
+.purple {
+    background: #f0edff;
+    color: var(--primary);
+}
+
+.green {
+    background: #e4f8ef;
+    color: var(--green);
+}
+
+.orange {
+    background: #fff1df;
+    color: var(--orange);
+}
+
+.summary-card h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 12px;
+    color: var(--secondary-text);
+}
+
+
+/* =================================
+   7. SECTION HEADINGS
+================================= */
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+
+/* =================================
+   8. EXPENSE FORM
+================================= */
+
+.expense-form-section {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    margin-bottom: 35px;
+}
+
+#expenseForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 13px;
+    background: var(--white);
+    color: var(--text);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-buttons button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#cancelBtn {
+    background: #f0f0f5;
+    color: var(--text);
+    border: none;
+}
+
+
+/* =================================
+   9. TRANSACTION SECTION
+================================= */
+
+.transactions {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    margin-bottom: 35px;
+}
+
+.filters {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+    background: var(--white);
+    color: var(--text);
+}
+
+.filters input {
+    flex: 1;
+}
+
+.filters select:focus,
+.filters input:focus {
+    border-color: var(--primary);
+}
+
+
+/* =================================
+   10. TRANSACTION TABLE
+================================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 600px;
+}
+
+thead {
+    background: #f8f8fc;
+}
+
+th {
+    padding: 16px;
+    color: var(--secondary-text);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+td {
+    padding: 18px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+#emptyMessage {
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 13px;
+    padding: 25px;
+}
+
+
+/* =================================
+   11. CATEGORY SUMMARY
+================================= */
+
+.category-summary {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    margin-bottom: 35px;
+}
+
+#categoryList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+
+/* =================================
+   12. FOOTER
+================================= */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--secondary-text);
+    font-size: 12px;
+}
+
+
+/* =================================
+   13. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 30px 25px;
+    }
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #categoryList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 75px;
+        padding: 25px 10px;
+        align-items: center;
+    }
+    .logo {
+        justify-content: center;
+    }
+    .logo h2,
+    .menu-heading,
+    .nav-link span,
+    .sidebar-bottom button span {
+        display: none;
+    }
+    .nav-link {
+        justify-content: center;
+        padding: 15px;
+    }
+    .sidebar-bottom button {
+        justify-content: center;
+    }
+    .main-content {
+        margin-left: 75px;
+        width: calc(100% - 75px);
+        padding: 25px 18px;
+    }
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+    .filters {
+        flex-direction: column;
+    }
+    #expenseForm {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .welcome h1 {
+        font-size: 23px;
+    }
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .summary-card {
+        padding: 20px;
+    }
+    .transactions,
+    .expense-form-section,
+    .category-summary {
+        padding: 16px;
+    }
+    #categoryList {
+        grid-template-columns: 1fr;
+    }
+}
