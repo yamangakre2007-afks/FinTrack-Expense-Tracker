@@ -1,5 +1,5 @@
 /* =================================
-   1. GOOGLE FONT & GLOBAL SETTINGS
+   1. GLOBAL STYLES
 ================================= */
 
 * {
@@ -24,6 +24,7 @@ body {
     font-family: 'Inter', sans-serif;
     background: var(--background);
     color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -438,6 +439,36 @@ td {
     gap: 15px;
 }
 
+.category-item {
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.category-item p {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.category-progress {
+    width: 100%;
+    height: 7px;
+    background: var(--background);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.category-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.category-item small {
+    color: var(--secondary-text);
+}
+
 
 /* =================================
    12. FOOTER
@@ -529,4 +560,156 @@ td {
     #categoryList {
         grid-template-columns: 1fr;
     }
+}
+
+
+/* =================================
+   14. DARK MODE
+================================= */
+
+body,
+.sidebar,
+.summary-card,
+.expense-form-section,
+.transactions,
+.category-summary,
+.form-group input,
+.form-group select,
+.filters input,
+.filters select {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Dark Mode Variables */
+
+body.dark-mode {
+    --background: #151521;
+    --white: #222231;
+    --text: #f1f1f7;
+    --secondary-text: #aaaabc;
+    --border: #363647;
+}
+
+
+/* Sidebar */
+
+body.dark-mode .sidebar {
+    background: var(--white);
+    border-color: var(--border);
+}
+
+
+/* Navigation */
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    background: #35304f;
+    color: #a99aff;
+}
+
+
+/* Theme Button */
+
+body.dark-mode .sidebar-bottom button {
+    background: #303041;
+    color: var(--text);
+}
+
+
+/* Summary Cards */
+
+body.dark-mode .summary-card {
+    background: var(--white);
+    border-color: var(--border);
+}
+
+
+/* Card Icons */
+
+body.dark-mode .purple {
+    background: #35304f;
+    color: #a99aff;
+}
+
+body.dark-mode .green {
+    background: #193d32;
+    color: #5de0a8;
+}
+
+body.dark-mode .orange {
+    background: #453421;
+    color: #ffbd72;
+}
+
+
+/* Sections */
+
+body.dark-mode .expense-form-section,
+body.dark-mode .transactions,
+body.dark-mode .category-summary {
+    background: var(--white);
+    border-color: var(--border);
+}
+
+
+/* Form Inputs */
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .filters input,
+body.dark-mode .filters select {
+    background: #303041;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+body.dark-mode input::placeholder {
+    color: #9999aa;
+}
+
+
+/* Transaction Table */
+
+body.dark-mode thead {
+    background: #303041;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+
+/* Cancel Button */
+
+body.dark-mode #cancelBtn {
+    background: #383849;
+    color: var(--text);
+}
+
+
+/* Category Summary */
+
+body.dark-mode .category-item {
+    background: #303041;
+    border-color: var(--border);
+    color: var(--text);
+}
+
+body.dark-mode .category-progress {
+    background: #454557;
+}
+
+
+/* Expense Action Buttons */
+
+body.dark-mode td button {
+    background: #383849;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
 }
