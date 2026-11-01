@@ -4,6 +4,12 @@ FinTrack is a simple and responsive expense tracking web application built using
 
 It helps users record, manage, and monitor their daily expenses through an interactive dashboard.
 
+🚀 Live Demo
+
+Live Website: https://fintrack-phi-bay.vercel.app/
+
+GitHub Repository: https://github.com/yamangakre2007-afks/FinTrack-Expense-Tracker
+
 🚀 Features
 
 * Dashboard: View total expenses, monthly expenses, and total transactions.
@@ -55,4 +61,4 @@ B.Tech Student
 
 📌 Project Status
 
-Currently under development.
+Completed and successfully deployed using Vercel.
